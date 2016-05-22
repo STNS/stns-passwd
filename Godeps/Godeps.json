@@ -1,0 +1,14 @@
+{
+	"ImportPath": "github.com/STNS/stns-passwd",
+	"GoVersion": "go1.5",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/STNS/libnss_stns/hash",
+			"Comment": "v0.1-0-6-gc5b1df4",
+			"Rev": "c5b1df47e0185ab77ddd9585b8787898f4e53b4c"
+		}
+	]
+}
