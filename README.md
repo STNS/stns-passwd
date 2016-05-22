@@ -21,9 +21,10 @@ Usage of stns-passwd:
         Print version information and quit.
 ```
 ## Install
+### Donwnload
+* [Github Release](https://github.com/STNS/stns-passwd/releases)
 
-To install, use `go get`:
-
+### go get
 ```bash
 $ go get -d github.com/STNS/stns-passwd
 ```
