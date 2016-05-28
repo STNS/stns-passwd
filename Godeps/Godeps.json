@@ -1,6 +1,7 @@
 {
 	"ImportPath": "github.com/STNS/stns-passwd",
-	"GoVersion": "go1.5",
+	"GoVersion": "go1.6",
+	"GodepVersion": "v66",
 	"Packages": [
 		"./..."
 	],
