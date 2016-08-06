@@ -4,8 +4,9 @@ import (
 	"flag"
 	"fmt"
 	"io"
+	"os"
 
-	"github.com/STNS/libnss_stns/hash"
+	"github.com/kless/osutil/user/crypt/sha512_crypt"
 )
 
 // Exit codes are int values that represent an exit code for a particular error.
@@ -24,22 +25,12 @@ type CLI struct {
 // Run invokes the CLI with the given arguments.
 func (cli *CLI) Run(args []string) int {
 	var (
-		s string
-		c int
-		m string
-
 		version bool
 	)
 
 	// Define option flag parse
 	flags := flag.NewFlagSet(Name, flag.ContinueOnError)
 	flags.SetOutput(cli.errStream)
-
-	flags.StringVar(&s, "s", "", "String used to salt. The SNS is the user name")
-
-	flags.IntVar(&c, "c", 0, "The number of times to stretching")
-
-	flags.StringVar(&m, "m", "sha256", "Specifies the hash function(sha256/sha512)")
 
 	flags.BoolVar(&version, "version", false, "Print version information and quit.")
 
@@ -59,7 +50,12 @@ func (cli *CLI) Run(args []string) int {
 		return ExitCodeError
 	}
 
-	fmt.Println(hash.Calculate(m, s != "", s, flags.Arg(0), c))
-
+	c := sha512_crypt.New()
+	v, err := c.Generate([]byte(flags.Arg(0)), []byte{})
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		return ExitCodeError
+	}
+	fmt.Println(v)
 	return ExitCodeOK
 }

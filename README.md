@@ -15,6 +15,12 @@ Usage of stns-passwd:
         Print version information and quit.
 ```
 ## Install
+### Homebrew
+```bash
+% brew tap stns/stns_passwd
+% brew isntall stns_passwd
+```
+
 ### Donwnload
 * [Github Release](https://github.com/STNS/stns-passwd/releases)
 
