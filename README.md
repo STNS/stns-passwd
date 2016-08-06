@@ -5,18 +5,12 @@ This command is used to generate a password to be used in STNS
 
 ## Usage
 ```bash
-$ stns-passwd -s <username> -m <hash_method> -c <stretching_count> <password_strings>
+$ stns-passwd <password_strings>
 ```
 
 ## options
 ```bash
 Usage of stns-passwd:
-  -c int
-        The number of times to stretching
-  -m string
-        Specifies the hash function(sha256/sha512) (default "sha256")
-  -s string
-        String used to salt. The SNS is the user name
   -version
         Print version information and quit.
 ```
