@@ -18,7 +18,7 @@ Usage of stns-passwd:
 ### Homebrew
 ```bash
 % brew tap stns/stns_passwd
-% brew isntall stns_passwd
+% brew install stns_passwd
 ```
 
 ### Donwnload
