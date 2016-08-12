@@ -74,7 +74,7 @@ func (cli *CLI) Run(args []string) int {
 		fmt.Fprintln(os.Stderr, err)
 		return ExitCodeError
 	}
-	fmt.Println(v)
+	fmt.Fprintln(cli.outStream, v)
 	return ExitCodeOK
 }
 
