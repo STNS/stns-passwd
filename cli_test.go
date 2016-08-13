@@ -23,29 +23,41 @@ func TestRun_versionFlag(t *testing.T) {
 	}
 }
 
-func TestRun_sFlag(t *testing.T) {
+func TestRun(t *testing.T) {
 	outStream, errStream := new(bytes.Buffer), new(bytes.Buffer)
 	cli := &CLI{outStream: outStream, errStream: errStream}
-	args := strings.Split("./stns-passwd -s", " ")
+	args := strings.Split("./stns-passwd helloworld", " ")
 
 	status := cli.Run(args)
-	_ = status
+	if status != ExitCodeOK {
+		t.Errorf("expected %d to eq %d", status, ExitCodeOK)
+	}
+
+	if len(errStream.String()) != 0 {
+		t.Error("errStream must be empty")
+	}
+
+	if len(outStream.String()) == 0 {
+		t.Error("outStream must not be empty")
+	}
 }
 
-func TestRun_cFlag(t *testing.T) {
+func TestRun_emptyPassword(t *testing.T) {
 	outStream, errStream := new(bytes.Buffer), new(bytes.Buffer)
 	cli := &CLI{outStream: outStream, errStream: errStream}
-	args := strings.Split("./stns-passwd -c", " ")
+	args := strings.Split("./stns-passwd ", " ")
 
 	status := cli.Run(args)
-	_ = status
-}
+	if status != ExitCodeError {
+		t.Errorf("expected %d to eq %d", status, ExitCodeError)
+	}
 
-func TestRun_mFlag(t *testing.T) {
-	outStream, errStream := new(bytes.Buffer), new(bytes.Buffer)
-	cli := &CLI{outStream: outStream, errStream: errStream}
-	args := strings.Split("./stns-passwd -m", " ")
+	expected := "Please specify a password"
+	if !strings.Contains(errStream.String(), expected) {
+		t.Errorf("expected %q to eq %q", errStream.String(), expected)
+	}
 
-	status := cli.Run(args)
-	_ = status
+	if len(outStream.String()) != 0 {
+		t.Error("outStream must be empty")
+	}
 }
