@@ -1,29 +1,16 @@
 # stns-passwd
-
-
-
-## Description
+This command is management a password to be used in STNS
 
 ## Usage
-
 ## Install
-
-To install, use `go get`:
-
+### Homebrew
 ```bash
-$ go get -d github.com/pyama86/stns-passwd
+% brew tap stns/stns-passwd
+% brew install stns-passwd
 ```
 
-## Contribution
-
-1. Fork ([https://github.com/pyama86/stns-passwd/fork](https://github.com/pyama86/stns-passwd/fork))
-1. Create a feature branch
-1. Commit your changes
-1. Rebase your local changes against the master branch
-1. Run test suite with the `go test ./...` command and confirm that it passes
-1. Run `gofmt -s`
-1. Create a new Pull Request
+### Donwnload
+* [Github Release](https://github.com/STNS/stns-passwd/releases)
 
 ## Author
-
-[pyama86](https://github.com/pyama86)
+- [pyama86](https://github.com/pyama86)

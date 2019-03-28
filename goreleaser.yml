@@ -1,0 +1,13 @@
+brew:
+  github:
+    owner: STNS
+    name: homebrew-stns_passwd
+  commit_author:
+    name: pyama86
+    email: www.kazu.com@gmail.com
+  description: "STNS Password Management Command"
+  homepage: "https://github.com/STNS/stns-passwd"
+  install: |
+    bin.install 'stns-passwd'
+  test: |
+    system "#{bin}/stns-passwd"

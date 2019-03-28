@@ -1,0 +1,11 @@
+language: go
+go:
+  - 1.12.1
+  - tip
+notifications:
+  slack: pepabo:CQkcN0cdvPSJvVsK2D48qYyV
+
+cache:
+  directories:
+    - /go/pkg/mod/cache/download
+    - /go/src/github.com
