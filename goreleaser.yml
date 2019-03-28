@@ -1,6 +1,6 @@
 brew:
   github:
-    owner: pyama86
+    owner: STNS
     name: homebrew-stns_passwd
   commit_author:
     name: pyama86
