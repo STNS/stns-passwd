@@ -130,12 +130,18 @@ func runUpdate(args []string) int {
 	tr.Proxy = http.ProxyFromEnvironment
 	client := &http.Client{Transport: tr}
 
-	resp, err := client.Do(req)
+	req.Header.Add("Content-Type", "application/json;charset=UTF-8")
+	res, err := client.Do(req)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		return ExitCodeError
 	}
-	defer resp.Body.Close()
+	defer res.Body.Close()
+	if res.StatusCode != http.StatusNoContent {
+		fmt.Fprintln(os.Stderr, "Failed to change password. Maybe the current password is miss match")
+		return ExitCodeError
+
+	}
 	return 0
 }
 
