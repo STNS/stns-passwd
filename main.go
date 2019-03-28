@@ -60,7 +60,6 @@ var commands = []*Command{
 }
 
 func main() {
-
 	flag.Usage = usage
 	flag.Parse()
 	log.SetFlags(0)

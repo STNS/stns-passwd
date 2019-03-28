@@ -1,5 +1,10 @@
+github.com/k0kubun/pp v3.0.0+incompatible h1:I00lq/ALERE8g5dW2th1jnjtJ/J4vautUNyHR3IRj7c=
+github.com/k0kubun/pp v3.0.0+incompatible/go.mod h1:GWse8YhT0p8pT4ir3ZgBbfZild3tgzSScAn6HmfYukg=
 github.com/kless/osutil v0.0.0-20161130133508-7d3ee1afa71c h1:Ws2FH852iLedKasudbpV3+MKwbN+hXGAMPxvPUG+uvE=
 github.com/kless/osutil v0.0.0-20161130133508-7d3ee1afa71c/go.mod h1:LZaf5qvVZ+3l5zlCzA16taxy7wjDOf+5kb2StXn1rsQ=
+github.com/mattn/go-colorable v0.1.1 h1:G1f5SKeVxmagw/IyvzvtZE4Gybcc4Tr1tf7I8z0XgOg=
+github.com/mattn/go-colorable v0.1.1/go.mod h1:FuOcm+DKB9mbwrcAfNl7/TZVBZ6rcnceauSikq3lYCQ=
+github.com/mattn/go-isatty v0.0.5/go.mod h1:Iq45c/XA43vh69/j3iqttzPXn0bhXyGjM0Hdxcsrc5s=
 github.com/mattn/go-isatty v0.0.7 h1:UvyT9uN+3r7yLEYSlJsbQGdsaB/a0DlgWP3pql6iwOc=
 github.com/mattn/go-isatty v0.0.7/go.mod h1:Iq45c/XA43vh69/j3iqttzPXn0bhXyGjM0Hdxcsrc5s=
 github.com/tredoe/osutil v0.0.0-20161130133508-7d3ee1afa71c h1:5q7IHeqvAA4hWR1CfpTOS7RFsTDC36TaSZ8Dvc00bPk=

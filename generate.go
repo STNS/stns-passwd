@@ -52,7 +52,7 @@ func readNewPasswordFromStdin() ([]byte, error) {
 	if isatty.IsTerminal(os.Stdin.Fd()) {
 		// Read password from terminal without echo back
 		var err error
-		fmt.Print("Enter password: ")
+		fmt.Print("Enter New password: ")
 		rawPassword, err := terminal.ReadPassword(int(syscall.Stdin))
 		fmt.Println()
 		if err != nil {
