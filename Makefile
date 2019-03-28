@@ -4,6 +4,6 @@ build:
 	gox -os="darwin linux" -arch="386 amd64" -output "release/stns_{{.OS}}_{{.Arch}}/{{.Dir}}"
 
 release:
-	git tag -a $(VERSION) -m "bump to $(VERSION)"
-	goreleaser
+	git tag -a $(VERSION) -m "bump to $(VERSION)" || true
+	goreleaser --rm-dist 
 .PHONY: release
