@@ -6,3 +6,4 @@ stns-passwd
 .bundle/*
 .rake_tasks
 Gemfile.lock
+dist
