@@ -32,7 +32,13 @@ type CLI struct {
 // Run invokes the CLI with the given arguments.
 func (cli *CLI) Run(args []string) int {
 	var (
-		version bool
+		version  bool
+		config   string
+		endpoint string
+		user     string
+		password string
+		cert     string
+		key      string
 	)
 
 	// Define option flag parse
@@ -40,6 +46,17 @@ func (cli *CLI) Run(args []string) int {
 	flags.SetOutput(cli.errStream)
 
 	flags.BoolVar(&version, "version", false, "Print version information and quit.")
+	flags.BoolVar(&version, "v", false, "Print version information and quit.")
+	flags.StringVar(&config, "config", "", "config file path.")
+	flags.StringVar(&config, "c", "", "config file path.")
+	flags.StringVar(&endpoint, "endpoint", "http://localhost:1104/v1", "endpoint url")
+	flags.StringVar(&endpoint, "e", "http://localhost:1104/v1", "endpoint url")
+	flags.StringVar(&user, "user", "", "basic auth user")
+	flags.StringVar(&user, "u", "", "basic auth user")
+	flags.StringVar(&password, "password", "", "basic auth password")
+	flags.StringVar(&password, "p", "", "basic auth password")
+	flags.StringVar(&cert, "cert", "", "TLS auth cert")
+	flags.StringVar(&key, "key", "", "TLS auth key")
 
 	// Parse commandline flag
 	if err := flags.Parse(args[1:]); err != nil {
