@@ -15,6 +15,7 @@ The commands are:
         update      Update password using STNS API
 
 Use "stns-passwd help [command]" for more information about a command.
+
 ```
 
 ## Install

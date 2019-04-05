@@ -21,9 +21,17 @@ var cmdUpdate = &Command{
 	Run:       runUpdate,
 	UsageLine: "update <username>",
 	Short:     "Update password using STNS API",
-	Long: `
-	Change the password of the specified user
-	`,
+	Long: ` Change the password of the specified user
+
+Options
+  endpoint   STNS API Endpoint URL
+  user       STNS API Basic Authentication Password
+  password   STNS API Basic Authentication Passowrd
+  ca         STNS API TLS Authentication CA Certificate
+  cert       STNS API TLS Authentication Certificate
+  key        STNS API TLS Authentication Key
+  insecure   Skil TLS Verify
+`,
 }
 
 var (
